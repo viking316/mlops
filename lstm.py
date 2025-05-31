@@ -1,20 +1,21 @@
+import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense
 
-# Original dataset
-data = [
-    22, 22.8, 22.9, 22.5, 22.5, 22, 21.9, 21.9, 22.3, 22.5,
-    22.4, 21.9, 21.5, 21.5, 21.3, 21, 21, 21, 21, 20.5
-]
+# Load CSV
+df = pd.read_csv("Offset equipment temperature degrees Celsius observed every 10 minutes.csv")
 
-#data loaded
-# Normalize data
-data = np.array(data)
-data = (data - np.min(data)) / (np.max(data) - np.min(data))
+# Smooth the temperature data using a rolling mean
+df['smoothed'] = df['temperature'].rolling(window=3, min_periods=1).mean()
 
-# Convert to supervised learning format
+# Normalize the smoothed data
+scaler = MinMaxScaler()
+data = scaler.fit_transform(df['smoothed'].values.reshape(-1, 1))
+
+# Create sequences
 def create_sequences(data, seq_length):
     X, y = [], []
     for i in range(len(data) - seq_length):
@@ -24,30 +25,43 @@ def create_sequences(data, seq_length):
 
 seq_length = 3
 X, y = create_sequences(data, seq_length)
-
-# Reshape input to [samples, time steps, features]
 X = X.reshape((X.shape[0], X.shape[1], 1))
 
-# Define LSTM model
-model = Sequential()
-model.add(LSTM(50, activation='relu', input_shape=(seq_length, 1)))
-model.add(Dense(1))
+# Split into training and testing
+split_index = int(len(X) * 0.8)
+X_train, X_test = X[:split_index], X[split_index:]
+y_train, y_test = y[:split_index], y[split_index:]
+
+# Build LSTM model
+model = Sequential([
+    LSTM(50, activation='relu', input_shape=(seq_length, 1)),
+    Dense(1)
+])
 model.compile(optimizer='adam', loss='mse')
 
-# Train the model
-model.fit(X, y, epochs=200, verbose=0)
+# Train model
+history = model.fit(X_train, y_train, epochs=200, verbose=0, validation_data=(X_test, y_test))
 
-# Predict next value
-last_sequence = data[-seq_length:].reshape((1, seq_length, 1))
-predicted = model.predict(last_sequence, verbose=0)
-predicted_value = predicted[0][0] * (np.max(data) - np.min(data)) + np.min(data)
+# Predict on test set
+y_pred = model.predict(X_test)
 
-print(f"Predicted next value: {predicted_value:.2f}")
+# Inverse transform for comparison
+y_test_inv = scaler.inverse_transform(y_test.reshape(-1, 1))
+y_pred_inv = scaler.inverse_transform(y_pred)
 
-# Optional: Plot original vs predicted sequence
-plt.plot(range(len(data)), data, label="Original")
-plt.axvline(len(data)-1, color='r', linestyle='--')
-plt.plot(len(data), predicted[0][0], 'go', label="Prediction")
+# Print change in loss
+loss_start = history.history['loss'][0]
+loss_end = history.history['loss'][-1]
+print(f"Loss change: {loss_start:.6f} -> {loss_end:.6f} (Δ = {loss_start - loss_end:.6f})\n")
+
+# Show predictions vs actual
+for i in range(len(y_test_inv)):
+    print(f"Expected: {y_test_inv[i][0]:.2f}, Predicted: {y_pred_inv[i][0]:.2f}")
+
+# Optional: Plot
+plt.plot(y_test_inv, label="Actual")
+plt.plot(y_pred_inv, label="Predicted")
+plt.title("Actual vs Predicted Temperatures")
 plt.legend()
-plt.title("LSTM Prediction")
 plt.show()
+
