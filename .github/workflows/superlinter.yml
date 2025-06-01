@@ -41,7 +41,7 @@ jobs:
           # The image name should match what Render is configured to pull.
           tags: |
             chandrashekar316/${{ github.event.repository.name }}:latest
-            chandrashekar316/${{ github.event.repository.name }}:${{ github.sha }} # Tag with the commit SHA
+            chandrashekar316/${{ github.event.repository.name }}:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
