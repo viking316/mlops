@@ -1,0 +1,44 @@
+2025-06-01 16:44:47,996 - INFO - Streamlit app started
+2025-06-01 16:44:47,997 - DEBUG - No file uploaded yet
+2025-06-01 16:44:52,692 - INFO - Streamlit app started
+2025-06-01 16:44:52,695 - INFO - File uploaded: Offset equipment temperature degrees Celsius observed every 10 minutes.csv
+2025-06-01 16:44:52,721 - DEBUG - CSV head:
+   Unnamed: 0  temperature
+0           1         22.0
+1           2         22.8
+2           3         22.9
+3           4         22.5
+4           5         22.5
+2025-06-01 16:44:54,993 - INFO - Streamlit app started
+2025-06-01 16:44:54,994 - INFO - File uploaded: Offset equipment temperature degrees Celsius observed every 10 minutes.csv
+2025-06-01 16:44:55,008 - DEBUG - CSV head:
+   Unnamed: 0  temperature
+0           1         22.0
+1           2         22.8
+2           3         22.9
+3           4         22.5
+4           5         22.5
+2025-06-01 16:44:55,009 - INFO - Run Model button clicked
+2025-06-01 16:44:55,012 - DEBUG - Smoothing applied
+2025-06-01 16:44:55,014 - DEBUG - Data normalized
+2025-06-01 16:44:55,024 - INFO - Created sequences: X shape = (4322, 3, 1), y shape = (4322, 1)
+2025-06-01 16:44:55,025 - DEBUG - Data split into training and testing
+2025-06-01 16:44:55,359 - INFO - Model compiled
+2025-06-01 16:46:35,568 - INFO - Model training completed
+2025-06-01 16:46:35,995 - INFO - Prediction completed
+2025-06-01 16:46:35,999 - INFO - MAE: 0.11, RMSE: 0.16
+2025-06-01 16:46:36,343 - DEBUG - STREAM b'IHDR' 16 13
+2025-06-01 16:46:36,343 - DEBUG - STREAM b'tEXt' 41 58
+2025-06-01 16:46:36,343 - DEBUG - STREAM b'pHYs' 111 9
+2025-06-01 16:46:36,343 - DEBUG - STREAM b'IDAT' 132 65536
+2025-06-01 16:46:36,344 - DEBUG - Plot rendered
+2025-06-01 16:46:36,351 - INFO - Download button displayed
+2025-06-01 16:46:46,172 - INFO - Streamlit app started
+2025-06-01 16:46:46,174 - INFO - File uploaded: Offset equipment temperature degrees Celsius observed every 10 minutes.csv
+2025-06-01 16:46:46,191 - DEBUG - CSV head:
+   Unnamed: 0  temperature
+0           1         22.0
+1           2         22.8
+2           3         22.9
+3           4         22.5
+4           5         22.5

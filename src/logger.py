@@ -3,10 +3,10 @@ import logging
 import os
 
 log_dir = "logs"
-os.makedirs(log_dir, exist_ok=True)
+log_file = os.path.join(os.path.dirname(__file__),"..","app.log")
 
 logging.basicConfig(
-    filename=os.path.join(log_dir, "app.log"),
+    filename=log_file,
     filemode = 'w',
     level=logging.DEBUG,
     format="%(asctime)s - %(levelname)s - %(message)s"
@@ -16,3 +16,4 @@ logging.getLogger("watchdog.observers.inotify_buffer").setLevel(logging.WARNING)
 logging.getLogger("matplotlib").setLevel(logging.WARNING)
 
 logger = logging.getLogger(__name__)
+print("Logger file has been imported")
