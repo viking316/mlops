@@ -126,3 +126,6 @@ if uploaded_file is not None:
         logger.error(f"CSV loading error: {e}")
 else:
     logger.debug("No file uploaded yet")
+
+
+
