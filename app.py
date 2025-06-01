@@ -7,6 +7,10 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense
 import io
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__),'src'))
 
 from logger import logger  # Import your configured logger
 

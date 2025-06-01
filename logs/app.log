@@ -1,0 +1,59 @@
+2025-06-01 16:37:10,547 - INFO - Streamlit app started
+2025-06-01 16:37:10,548 - DEBUG - No file uploaded yet
+2025-06-01 16:37:56,296 - INFO - Streamlit app started
+2025-06-01 16:37:56,297 - INFO - File uploaded: Offset equipment temperature degrees Celsius observed every 10 minutes.csv
+2025-06-01 16:37:56,323 - DEBUG - CSV head:
+   Unnamed: 0  temperature
+0           1         22.0
+1           2         22.8
+2           3         22.9
+3           4         22.5
+4           5         22.5
+2025-06-01 16:37:58,631 - INFO - Streamlit app started
+2025-06-01 16:37:58,633 - INFO - File uploaded: Offset equipment temperature degrees Celsius observed every 10 minutes.csv
+2025-06-01 16:37:58,651 - DEBUG - CSV head:
+   Unnamed: 0  temperature
+0           1         22.0
+1           2         22.8
+2           3         22.9
+3           4         22.5
+4           5         22.5
+2025-06-01 16:37:58,653 - INFO - Run Model button clicked
+2025-06-01 16:37:58,656 - DEBUG - Smoothing applied
+2025-06-01 16:37:58,658 - DEBUG - Data normalized
+2025-06-01 16:37:58,669 - INFO - Created sequences: X shape = (4322, 3, 1), y shape = (4322, 1)
+2025-06-01 16:37:58,670 - DEBUG - Data split into training and testing
+2025-06-01 16:37:58,985 - INFO - Model compiled
+2025-06-01 16:39:03,728 - INFO - Streamlit app started
+2025-06-01 16:39:03,730 - INFO - File uploaded: Offset equipment temperature degrees Celsius observed every 10 minutes.csv
+2025-06-01 16:39:03,759 - DEBUG - CSV head:
+   Unnamed: 0  temperature
+0           1         22.0
+1           2         22.8
+2           3         22.9
+3           4         22.5
+4           5         22.5
+2025-06-01 16:39:05,378 - INFO - Streamlit app started
+2025-06-01 16:39:05,379 - INFO - File uploaded: Offset equipment temperature degrees Celsius observed every 10 minutes.csv
+2025-06-01 16:39:05,399 - DEBUG - CSV head:
+   Unnamed: 0  temperature
+0           1         22.0
+1           2         22.8
+2           3         22.9
+3           4         22.5
+4           5         22.5
+2025-06-01 16:39:05,400 - INFO - Run Model button clicked
+2025-06-01 16:39:05,405 - DEBUG - Smoothing applied
+2025-06-01 16:39:05,407 - DEBUG - Data normalized
+2025-06-01 16:39:05,431 - INFO - Created sequences: X shape = (4322, 3, 1), y shape = (4322, 1)
+2025-06-01 16:39:05,432 - DEBUG - Data split into training and testing
+2025-06-01 16:39:05,771 - INFO - Model compiled
+2025-06-01 16:40:44,554 - INFO - Model training completed
+2025-06-01 16:40:44,931 - INFO - Prediction completed
+2025-06-01 16:40:44,935 - INFO - MAE: 0.11, RMSE: 0.15
+2025-06-01 16:40:45,225 - DEBUG - STREAM b'IHDR' 16 13
+2025-06-01 16:40:45,225 - DEBUG - STREAM b'tEXt' 41 58
+2025-06-01 16:40:45,225 - DEBUG - STREAM b'pHYs' 111 9
+2025-06-01 16:40:45,225 - DEBUG - STREAM b'IDAT' 132 65536
+2025-06-01 16:40:45,226 - DEBUG - Plot rendered
+2025-06-01 16:40:45,233 - INFO - Download button displayed
