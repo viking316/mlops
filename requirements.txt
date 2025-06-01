@@ -27,7 +27,6 @@ jsonschema-specifications==2025.4.1
 keras==2.14.0
 kiwisolver==1.4.8
 libclang==18.1.1
-linkattacher-msgs==0.0.0
 Markdown==3.8
 MarkupSafe==3.0.2
 matplotlib==3.10.3
@@ -44,7 +43,6 @@ pyarrow==20.0.0
 pyasn1==0.6.1
 pyasn1_modules==0.4.2
 pydeck==0.9.1
-pymoveit2==2.1.0
 pyparsing==3.2.3
 python-dateutil==2.9.0.post0
 pytz==2025.2
@@ -70,7 +68,6 @@ toml==0.10.2
 tornado==6.5.1
 typing_extensions==4.13.2
 tzdata==2025.2
-ur5-control==0.0.0
 urllib3==2.4.0
 watchdog==6.0.0
 Werkzeug==3.1.3
