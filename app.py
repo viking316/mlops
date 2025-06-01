@@ -72,7 +72,7 @@ if uploaded_file is not None:
                     logger.info("Model compiled")
 
                     with st.spinner("⏳ Training model..."):
-                        history = model.fit(X_train, y_train, epochs=200, verbose=0, validation_data=(X_test, y_test))
+                        history = model.fit(X_train, y_train, epochs=100, verbose=0, validation_data=(X_test, y_test))
                     logger.info("Model training completed")
 
                     # Predict
