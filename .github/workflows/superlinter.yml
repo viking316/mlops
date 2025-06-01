@@ -1,55 +1,54 @@
 # .github/workflows/deploy.yml
-name: Build & Deploy to Render
+name: Build & Deploy to Render (Docker Hub)
 
 on:
   push:
     branches:
-      - master # Change this to 'master' if your default branch is master
+      - master # Ensure this matches your main branch name (e.g., 'main' or 'master')
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest # Use the latest Ubuntu runner provided by GitHub Actions
+    runs-on: ubuntu-latest
     
     # Permissions for this job:
     # 'contents: read' allows checkout of your repository code.
-    # 'packages: write' is CRUCIAL for pushing images to GitHub Container Registry (ghcr.io).
+    # 'packages: write' is NOT needed for Docker Hub, but 'id-token: write' might be for OIDC if you use it.
+    # For basic Docker Hub push, 'contents: read' is usually sufficient, as credentials are passed directly.
     permissions:
       contents: read
-      packages: write
+      # If you were using OIDC for Docker Hub, you might need: id-token: write
 
     steps:
       - name: ⬇️ Checkout Repository
         uses: actions/checkout@v4
 
-      - name: 🔑 Log in to GitHub Container Registry
+      - name: 🔑 Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-          registry: ghcr.io # The registry for GitHub Container Registry
-          username: ${{ github.actor }} # Uses your GitHub username
-          password: ${{ secrets.GITHUB_TOKEN }} # Uses the automatically provided GITHUB_TOKEN
+          registry: docker.io # This is the default registry for Docker Hub, but explicitly stating it is good.
+          username: ${{ secrets.DOCKER_USERNAME }} # Use the Docker Hub username secret
+          password: ${{ secrets.DOCKER_TOKEN }} # Use the Docker Hub token secret
 
       - name: ⚙️ Set up Docker Buildx
-        # Docker Buildx provides enhanced build capabilities, like caching
         uses: docker/setup-buildx-action@v3
 
-      - name: 🏗️ Build and Push Docker Image to GHCR
+      - name: 🏗️ Build and Push Docker Image to Docker Hub
         uses: docker/build-push-action@v5
         with:
-          context: . # Specifies that your Dockerfile is in the current directory (repository root)
-          push: true # Tells the action to push the built image to the registry
-          tags: | # Defines the tags for your image.
-            ghcr.io/${{ github.repository }}:latest # latest tag
-            ghcr.io/${{ github.repository }}:${{ github.sha }} # Tag with the commit SHA for unique versions
-          cache-from: type=gha # Use GitHub Actions cache for faster subsequent builds
-          cache-to: type=gha,mode=max # Store build cache in GitHub Actions cache
+          context: .
+          push: true
+          # IMPORTANT: Replace 'your_docker_username' with your actual Docker Hub username.
+          # The image name should match what Render is configured to pull.
+          tags: |
+            chandrashekar316/${{ github.event.repository.name }}:latest # latest tag
+            chandrashekar316/${{ github.event.repository.name }}:${{ github.sha }} # Tag with the commit SHA
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
       - name: 🚀 Trigger Render Deploy Hook
-        # This step sends a POST request to your Render Deploy Hook URL.
-        # Render will then automatically pull the 'latest' image from GHCR and deploy it.
         env:
-          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }} # Access the secret you set up
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
         run: |
-          # Basic check to ensure the secret is set, otherwise skip
           if [ -z "$RENDER_DEPLOY_HOOK_URL" ]; then
             echo "RENDER_DEPLOY_HOOK_URL secret not set. Skipping Render deploy trigger."
           else
