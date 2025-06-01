@@ -1,67 +1,37 @@
-2025-06-01 15:22:18,414 - INFO - Streamlit app started
-2025-06-01 15:22:18,415 - DEBUG - No file uploaded yet
-2025-06-01 15:22:23,461 - INFO - Streamlit app started
-2025-06-01 15:22:23,463 - INFO - File uploaded: test
-2025-06-01 15:22:23,484 - DEBUG - CSV head:
-Empty DataFrame
-Columns: [funfunfun]
-Index: []
-2025-06-01 15:22:23,485 - WARNING - CSV missing required 'temperature' column
-2025-06-01 15:23:36,238 - INFO - Streamlit app started
-2025-06-01 15:23:36,240 - DEBUG - No file uploaded yet
-2025-06-01 15:23:39,740 - INFO - Streamlit app started
-2025-06-01 15:23:39,743 - INFO - File uploaded: result-2024-LB-0-20241018.json
-2025-06-01 15:23:39,750 - ERROR - CSV loading error: Error tokenizing data. C error: Expected 1 fields in line 3, saw 2
-
-2025-06-01 15:23:41,603 - INFO - Streamlit app started
-2025-06-01 15:23:41,605 - DEBUG - No file uploaded yet
-2025-06-01 15:23:44,541 - INFO - Streamlit app started
-2025-06-01 15:23:44,543 - INFO - File uploaded: test
-2025-06-01 15:23:44,552 - DEBUG - CSV head:
-Empty DataFrame
-Columns: [temperature]
-Index: []
-2025-06-01 15:23:47,243 - INFO - Streamlit app started
-2025-06-01 15:23:47,244 - INFO - File uploaded: test
-2025-06-01 15:23:47,251 - DEBUG - CSV head:
-Empty DataFrame
-Columns: [temperature]
-Index: []
-2025-06-01 15:23:47,253 - INFO - Run Model button clicked
-2025-06-01 15:23:47,255 - DEBUG - Smoothing applied
-2025-06-01 15:23:47,257 - ERROR - Model processing error: Found array with 0 sample(s) (shape=(0, 1)) while a minimum of 1 is required by MinMaxScaler.
-2025-06-01 15:24:59,484 - INFO - Streamlit app started
-2025-06-01 15:24:59,486 - DEBUG - No file uploaded yet
-2025-06-01 15:25:08,749 - INFO - Streamlit app started
-2025-06-01 15:25:08,751 - INFO - File uploaded: Offset equipment temperature degrees Celsius observed every 10 minutes.csv
-2025-06-01 15:25:08,767 - DEBUG - CSV head:
+2025-06-01 16:05:15,016 - INFO - Streamlit app started
+2025-06-01 16:05:15,017 - DEBUG - No file uploaded yet
+2025-06-01 16:05:38,413 - INFO - Streamlit app started
+2025-06-01 16:05:38,415 - INFO - File uploaded: Offset equipment temperature degrees Celsius observed every 10 minutes.csv
+2025-06-01 16:05:38,443 - DEBUG - CSV head:
    Unnamed: 0  temperature
 0           1         22.0
 1           2         22.8
 2           3         22.9
 3           4         22.5
 4           5         22.5
-2025-06-01 15:25:11,381 - INFO - Streamlit app started
-2025-06-01 15:25:11,383 - INFO - File uploaded: Offset equipment temperature degrees Celsius observed every 10 minutes.csv
-2025-06-01 15:25:11,396 - DEBUG - CSV head:
+2025-06-01 16:05:43,169 - INFO - Streamlit app started
+2025-06-01 16:05:43,170 - INFO - File uploaded: Offset equipment temperature degrees Celsius observed every 10 minutes.csv
+2025-06-01 16:05:43,183 - DEBUG - CSV head:
    Unnamed: 0  temperature
 0           1         22.0
 1           2         22.8
 2           3         22.9
 3           4         22.5
 4           5         22.5
-2025-06-01 15:25:11,397 - INFO - Run Model button clicked
-2025-06-01 15:25:11,401 - DEBUG - Smoothing applied
-2025-06-01 15:25:11,404 - DEBUG - Data normalized
-2025-06-01 15:25:11,415 - INFO - Created sequences: X shape = (4322, 3, 1), y shape = (4322, 1)
-2025-06-01 15:25:11,416 - DEBUG - Data split into training and testing
-2025-06-01 15:25:11,747 - INFO - Model compiled
-2025-06-01 15:26:45,562 - INFO - Model training completed
-2025-06-01 15:26:45,969 - INFO - Prediction completed
-2025-06-01 15:26:45,973 - INFO - MAE: 0.11, RMSE: 0.16
-2025-06-01 15:26:46,285 - DEBUG - STREAM b'IHDR' 16 13
-2025-06-01 15:26:46,286 - DEBUG - STREAM b'tEXt' 41 58
-2025-06-01 15:26:46,286 - DEBUG - STREAM b'pHYs' 111 9
-2025-06-01 15:26:46,286 - DEBUG - STREAM b'IDAT' 132 65536
-2025-06-01 15:26:46,287 - DEBUG - Plot rendered
-2025-06-01 15:26:46,294 - INFO - Download button displayed
+2025-06-01 16:05:43,184 - INFO - Run Model button clicked
+2025-06-01 16:05:43,186 - DEBUG - Smoothing applied
+2025-06-01 16:05:43,187 - DEBUG - Data normalized
+2025-06-01 16:05:43,194 - INFO - Created sequences: X shape = (4322, 3, 1), y shape = (4322, 1)
+2025-06-01 16:05:43,194 - DEBUG - Data split into training and testing
+2025-06-01 16:05:43,389 - INFO - Model compiled
+2025-06-01 16:07:37,716 - INFO - Model training completed
+2025-06-01 16:07:38,207 - INFO - Prediction completed
+2025-06-01 16:07:38,217 - INFO - MAE: 0.10, RMSE: 0.15
+2025-06-01 16:07:38,467 - DEBUG - STREAM b'IHDR' 16 13
+2025-06-01 16:07:38,467 - DEBUG - STREAM b'tEXt' 41 58
+2025-06-01 16:07:38,467 - DEBUG - STREAM b'pHYs' 111 9
+2025-06-01 16:07:38,467 - DEBUG - STREAM b'IDAT' 132 65536
+2025-06-01 16:07:38,468 - DEBUG - Plot rendered
+2025-06-01 16:07:38,475 - INFO - Download button displayed
+2025-06-01 16:08:17,679 - DEBUG - Popen(['git', 'version'], cwd=D:\Big_scroll\codingg\MLOPS, stdin=None, shell=False, universal_newlines=False)
+2025-06-01 16:08:17,748 - DEBUG - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=D:\Big_scroll\codingg\MLOPS, stdin=None, shell=False, universal_newlines=False)

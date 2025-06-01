@@ -47,8 +47,8 @@ pyparsing==3.2.3
 python-dateutil==2.9.0.post0
 pytz==2025.2
 referencing==0.36.2
-requests==2.32.3
-requests-oauthlib==2.0.0
+# requests==2.32.3
+# requests-oauthlib==2.0.0
 rpds-py==0.25.1
 rsa==4.9.1
 scikit-learn==1.6.1
@@ -68,7 +68,7 @@ toml==0.10.2
 tornado==6.5.1
 typing_extensions==4.13.2
 tzdata==2025.2
-urllib3==2.4.0
+# urllib3==2.4.0
 watchdog==6.0.0
 Werkzeug==3.1.3
 wrapt==1.14.1
