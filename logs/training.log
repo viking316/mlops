@@ -1,4 +1,0 @@
-2025-06-01 11:55:25,737 - INFO - Data loaded and normalized successfully.
-2025-06-01 11:55:25,742 - INFO - Created 4322 sequences of length 3.
-2025-06-01 11:55:26,023 - INFO - LSTM model built and compiled.
-2025-06-01 11:56:52,303 - INFO - Loss change: 0.075974 -> 0.000093
