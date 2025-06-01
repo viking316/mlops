@@ -1,5 +1,5 @@
 /venv
-
+/venvs
 __pycache__/
 
 .vscode/

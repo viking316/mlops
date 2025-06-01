@@ -27,7 +27,6 @@ jsonschema-specifications==2025.4.1
 keras==2.14.0
 kiwisolver==1.4.8
 libclang==18.1.1
-linkattacher-msgs==0.0.0
 Markdown==3.8
 MarkupSafe==3.0.2
 matplotlib==3.10.3
