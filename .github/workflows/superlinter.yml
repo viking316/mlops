@@ -40,7 +40,7 @@ jobs:
           # IMPORTANT: Replace 'your_docker_username' with your actual Docker Hub username.
           # The image name should match what Render is configured to pull.
           tags: |
-            chandrashekar316/${{ github.event.repository.name }}:latest # latest tag
+            chandrashekar316/${{ github.event.repository.name }}:latest
             chandrashekar316/${{ github.event.repository.name }}:${{ github.sha }} # Tag with the commit SHA
           cache-from: type=gha
           cache-to: type=gha,mode=max
