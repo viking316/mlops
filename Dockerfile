@@ -8,7 +8,7 @@ RUN git clone https://github.com/viking316/mlops.git .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 8501
+EXPOSE 8080
 
 CMD ["streamlit", "run", "app.py", "--server.port=8080","--server.address=0.0.0.0","server.enableCORS=false"]
 
